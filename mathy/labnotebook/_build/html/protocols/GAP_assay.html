@@ -1,0 +1,383 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GAP Assay &#8212; GAP and GEF Expression Tuning</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Protein Preps" href="../protein_preps/index.html" />
+    <link rel="prev" title="Protocols" href="index.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">GAP and GEF Expression Tuning</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../20201107_N156W_cloning.html">
+   20201107 N156W cloning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2020-11-13%20HPLC%20and%20CD.html">
+   2020-11-13 HPLC and CD with F28V, F28Y
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../20201113_aggregation_test.html">
+   2020-11-13 Aggregation Test
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../20200112_plot_CD_HPLC.html">
+   20200112_plot_CD_HPLC
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../GAP_assays/index.html">
+   GAP Assays
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../GAP_assays/tina_notes.html">
+     Notes from Tina about GAP assays
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../GAP_assays/20201117/index.html">
+     20201117 GAP Assay
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../GAP_assays/20201117/20201117_GAP_assay.html">
+       2020-11-17 GAP Assay
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../notes/index.html">
+   Notes
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notes/isntalling%20bio3d.html">
+     2020-02-04 Installing bio3d
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notes/Neuwald2003_notes.html">
+     Neuwald 2003 notes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notes/meeting_notes.html">
+     Meeting notes for DMS project
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notes/Gsp1%20DMS%20Plan%202020-07-01.html">
+     2020-07-01 Gsp1 DMS Plan
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notes/gsp1_sequence.html">
+     Gsp1 sequence info
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notes/20201021_results_outline.html">
+     very rough results outline to consider
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notes/Gsp1%20annotation.html">
+     2020-03-12 Gsp1 annotation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notes/Gsp1%20DMS%20Plan%20progress.html">
+     2020-07-09 Gsp1 DMS Plan PROGRESS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notes/For%20David%20%20What%20we%20know%20about%20mutants.html">
+     2020-06-09 Mutation info for David
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notes/emap%20colony%20size%20notes.html">
+     2020-03-27 EMAP Colony Size Notes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notes/Tina%20explaining%20the%20Gsp1%20EMAP%20paper%20SASA.html">
+     2020-06-08 Tina on EMAP SASA
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notes/loose_ends.html">
+     Loose ends - some general things to think about for DMS
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="index.html">
+   Protocols
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     GAP Assay
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../protein_preps/index.html">
+   Protein Preps
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../protein_preps/20201204_Mutant_Expression.html">
+     2020-12-04 Gsp1 Mutant Expression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../protein_preps/20201026_Mutant_Expression.html">
+     2020-10-26 Gsp1 Mutant Expression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../protein_preps/20201029_Mutant_Expression.html">
+     2020-10-29 Gsp1 Mutant Expression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../protein_preps/20201205_prep.html">
+     Expression of dominant negative/tolerants mutants
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/protocols/GAP_assay.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="gap-assay">
+<h1>GAP Assay<a class="headerlink" href="#gap-assay" title="Permalink to this headline">¶</a></h1>
+<p>Protocol for running GAP Assay
+Written 2020 01 17</p>
+<p>Based off of <a class="reference external" href="https://www.evernote.com/shard/s408/client/snv?noteGuid=4b90ac9c-2b44-4424-9905-2bdbfbfb371b%C2%ACeKey=19982d06f09039a2&amp;sn=https%3A%2F%2Fwww.evernote.com%2Fshard%2Fs408%2Fsh%2F4b90ac9c-2b44-4424-9905-2bdbfbfb371b%2F19982d06f09039a2&amp;title=PROTOCOL">Tina’s evernote file</a></p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./protocols"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">Protocols</a>
+    <a class='right-next' id="next-link" href="../protein_preps/index.html" title="next page">Protein Preps</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chris Mathy<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

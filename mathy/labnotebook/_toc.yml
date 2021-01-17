@@ -1,0 +1,35 @@
+file: index
+sections:
+- file: 20201107_N156W_cloning
+- file: 2020-11-13 HPLC and CD
+- file: 20201113_aggregation_test
+- file: 20200112_plot_CD_HPLC
+- file: GAP_assays/index
+  sections:
+  - file: GAP_assays/tina_notes
+  - file: GAP_assays/20201117/index
+    sections:
+    - file: GAP_assays/20201117/20201117_GAP_assay
+- file: notes/index
+  sections:
+  - file: notes/isntalling bio3d
+  - file: notes/Neuwald2003_notes
+  - file: notes/meeting_notes
+  - file: notes/Gsp1 DMS Plan 2020-07-01
+  - file: notes/gsp1_sequence
+  - file: notes/20201021_results_outline
+  - file: notes/Gsp1 annotation
+  - file: notes/Gsp1 DMS Plan progress
+  - file: notes/For David  What we know about mutants
+  - file: notes/emap colony size notes
+  - file: notes/Tina explaining the Gsp1 EMAP paper SASA
+  - file: notes/loose_ends
+- file: protocols/index
+  sections:
+  - file: protocols/GAP_assay
+- file: protein_preps/index
+  sections:
+  - file: protein_preps/20201204_Mutant_Expression
+  - file: protein_preps/20201026_Mutant_Expression
+  - file: protein_preps/20201029_Mutant_Expression
+  - file: protein_preps/20201205_prep

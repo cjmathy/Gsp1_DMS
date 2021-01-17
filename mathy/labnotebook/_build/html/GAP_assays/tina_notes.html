@@ -1,0 +1,444 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes from Tina about GAP assays &#8212; GAP and GEF Expression Tuning</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="20201117 GAP Assay" href="20201117/index.html" />
+    <link rel="prev" title="GAP Assays" href="index.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">GAP and GEF Expression Tuning</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../20201107_N156W_cloning.html">
+   20201107 N156W cloning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../2020-11-13%20HPLC%20and%20CD.html">
+   2020-11-13 HPLC and CD with F28V, F28Y
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../20201113_aggregation_test.html">
+   2020-11-13 Aggregation Test
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../20200112_plot_CD_HPLC.html">
+   20200112_plot_CD_HPLC
+  </a>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="index.html">
+   GAP Assays
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Notes from Tina about GAP assays
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="20201117/index.html">
+     20201117 GAP Assay
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="20201117/20201117_GAP_assay.html">
+       2020-11-17 GAP Assay
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../notes/index.html">
+   Notes
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notes/isntalling%20bio3d.html">
+     2020-02-04 Installing bio3d
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notes/Neuwald2003_notes.html">
+     Neuwald 2003 notes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notes/meeting_notes.html">
+     Meeting notes for DMS project
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notes/Gsp1%20DMS%20Plan%202020-07-01.html">
+     2020-07-01 Gsp1 DMS Plan
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notes/gsp1_sequence.html">
+     Gsp1 sequence info
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notes/20201021_results_outline.html">
+     very rough results outline to consider
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notes/Gsp1%20annotation.html">
+     2020-03-12 Gsp1 annotation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notes/Gsp1%20DMS%20Plan%20progress.html">
+     2020-07-09 Gsp1 DMS Plan PROGRESS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notes/For%20David%20%20What%20we%20know%20about%20mutants.html">
+     2020-06-09 Mutation info for David
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notes/emap%20colony%20size%20notes.html">
+     2020-03-27 EMAP Colony Size Notes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notes/Tina%20explaining%20the%20Gsp1%20EMAP%20paper%20SASA.html">
+     2020-06-08 Tina on EMAP SASA
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notes/loose_ends.html">
+     Loose ends - some general things to think about for DMS
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../protocols/index.html">
+   Protocols
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../protocols/GAP_assay.html">
+     GAP Assay
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../protein_preps/index.html">
+   Protein Preps
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../protein_preps/20201204_Mutant_Expression.html">
+     2020-12-04 Gsp1 Mutant Expression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../protein_preps/20201026_Mutant_Expression.html">
+     2020-10-26 Gsp1 Mutant Expression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../protein_preps/20201029_Mutant_Expression.html">
+     2020-10-29 Gsp1 Mutant Expression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../protein_preps/20201205_prep.html">
+     Expression of dominant negative/tolerants mutants
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/GAP_assays/tina_notes.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="notes-from-tina-about-gap-assays">
+<h1>Notes from Tina about GAP assays<a class="headerlink" href="#notes-from-tina-about-gap-assays" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Tina would do one replicate with/without GAP (so two wells total) per loading, “Because that was the largest variation in values. Experiments from the same fractions of loading set up in the same way were really the same.”</p>
+<ul>
+<li><p>She says 2 technical replicates for GAP and 2 for no GAP per loading would be good, but sensor is the biggest expense so she just did one.</p></li>
+<li><p>3 “biological” replicates which were the GTP loadings</p></li>
+</ul>
+</li>
+<li><p>If you don’t know loading efficiency, you may want to do 8 uM or 10 uM so that final concentration is closer to 5 uM</p>
+<ul>
+<li><p>“it seems lower conc were better - lower fitting error”</p></li>
+<li><p>“So 5 is good but also use 10 if your loading efficiency is low so you get 5 in the end”</p></li>
+</ul>
+</li>
+<li><p>prewarming the plate is important for the start being linear</p></li>
+<li><p>use 20 uM sensor</p>
+<ul>
+<li><p>“I used to play with the ratio of sensor and protein. I guess with 10 we could have used 20 not 50 of sensor”</p></li>
+<li><p>“You want to be up to 60% of sensor” i.e. 0.6*[sensor conc.] = [Gsp1 conc]</p></li>
+<li><p>“If your phosphate concentration is over 60% sensor concentration you are out of the linear range”</p></li>
+</ul>
+</li>
+<li><p>on the calibration:</p>
+<ul>
+<li><p>“So the calibration I have is linear. If we order new sensor we should order some more and calibrate the 20 uM. Ideally you want to do everything with the same lot and have that lot calibrated. I think this is where most of our error came from. Mixing lots and calibrations.</p></li>
+<li><p>“Also you don’t need to calibrate before you run. You can calibrate any time. It’s to get final concentration. And you need that to get km and kcat. But for first approx you can use my old calibration values.”</p></li>
+<li><p>I asked “i do need to re-calibrate for every lot, right?”, to which she responded “Yes ideally. I think I had two of three calibrated in the end. Cos it uses up so much sensor. And the values were pretty similar. But I think it’s a good idea to calibrate and hopefully you will do everything with the same lot. I think the main benefit now is that we learned it’s ok to do the experiment with low concentration of loaded protein. Like 8. So you can do all the exp with 20 uM sensor. I had a bunch of calibrations for 10, 20, 50, 70 uM. And that ate up multiple tubes of the sensor. You don’t have to do that”</p></li>
+</ul>
+</li>
+<li><p>n. of experiments with 3 tubes of sensor:</p>
+<ul>
+<li><p>200 ul per tube * 500 uM</p></li>
+<li><p>dilute it 4 times to 125 uM that makes 800 ul</p></li>
+<li><p>you use 20 of that per reaction</p></li>
+<li><p>So that is 40 reaction per tube</p></li>
+<li><p>You want to do 30 reactions at least plus calibration</p></li>
+<li><p>we can easily end up using 3 tubes</p></li>
+</ul>
+</li>
+<li><p>Tina after fitting the F28V and F28Y curves</p>
+<ul>
+<li><p>The curves were a bit bumpy, especially the 10 uM F28V was hard to fit, so I would’t trust that super low Km. The rest seems OK. looks like the tolerant mutant is very similar to WT and the DN mutant is just a bit slower. in general not a large effect!</p></li>
+</ul>
+</li>
+<li><p>On minimizing batch variation:</p>
+<ul>
+<li><p>I said: “Hey can I run something by you regarding GAP assay? So I don’t have as many aliquots frozen as we did when we had larger scale preps, so Tanja and I figured doing two loadings in parallel from one thawed tube can count as a “biological replicate” for our purposes. Do you agree? So I would thaw one tube, do two loadings side by side, then with each loading do +/- GAP.”</p></li>
+<li><p>She said: another thing you can add to make it more viariable, or more like it’s two different days, is use two separate sensor dilutions for the two batches. I think you will get more variations from that than from loading, to be fair. so lets say you do samples 1-3: you run 1a, 2a, 3a with one dilution of sensor and 1b, 2b, and 3b with another 4x dilution of sensor. do you see what I mean?”</p></li>
+<li><p>I said: “yes, i do, so the suggestion is that most of our variability across the entire dataset will be from different sensor dilutions”. She said “that’s my feeling”. and I said “so to avoid a day-based batch effect, I should use two sensor dilutions on the same day, but i should still do two loadings, since that will account for variability between different loading efficiencies.</p></li>
+</ul>
+</li>
+<li><p>On loading times:</p>
+<ul>
+<li><p>Tina also said I could leave one of the two loadings on the NAP5 column for longer, to simulate different loading times. I mentioned I’m less worried because it’s essentially at equilibrium after 3 hours, given minimal hydrolysis on ice. She agreed but mention it could also take aggregation into account.</p></li>
+<li><p>I agreed that I could have 6 NAP5s for 3 samples x 2 loadings, and elute 1a, 2a, 3a first, do my nanodrop measurements which takes some time, then elute 1b, 2b, 3b.</p></li>
+</ul>
+</li>
+<li><p>Sensor dilutions:</p>
+<ul>
+<li><p>I asked: “should i aliquot it today when i thaw it? like aliquot into black tubes, then i can just take a tube out and immediately dilute with a certain volume?”</p></li>
+<li><p>Tina’s response: “yes, I used to aliquot after thawing the first time because freeze thawing definitely affects it. I don’t dilute it before freezing. always flash freeze in it’s original buffer, and at high conc. I always dilute it with the same buffer I use for assay. I would write down on the side of the black tube the volume, like 32 ul and then once I took it out, I would just spin down and add buffer on top of it. so make sure to calculate how many runs you want to use and how big your aliquot needs to be.</p></li>
+<li><p>She then proceeded: “the most important thing is to use the same diluted sensor for +/- GAP. diluting the sensor twice 4x is a huge variation, you will see. don’t mix and match sensor for +/- GAP”. I clarified that you can tell from the starting point of the curves being the same, and she confirmed.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./GAP_assays"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">GAP Assays</a>
+    <a class='right-next' id="next-link" href="20201117/index.html" title="next page">20201117 GAP Assay</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chris Mathy<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

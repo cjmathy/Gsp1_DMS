@@ -1,0 +1,517 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2020-11-17 GAP Assay &#8212; GAP and GEF Expression Tuning</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Notes" href="../../notes/index.html" />
+    <link rel="prev" title="20201117 GAP Assay" href="index.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">GAP and GEF Expression Tuning</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../20201107_N156W_cloning.html">
+   20201107 N156W cloning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../2020-11-13%20HPLC%20and%20CD.html">
+   2020-11-13 HPLC and CD with F28V, F28Y
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../20201113_aggregation_test.html">
+   2020-11-13 Aggregation Test
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../20200112_plot_CD_HPLC.html">
+   20200112_plot_CD_HPLC
+  </a>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../index.html">
+   GAP Assays
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../tina_notes.html">
+     Notes from Tina about GAP assays
+    </a>
+   </li>
+   <li class="toctree-l2 current active collapsible-parent">
+    <a class="reference internal" href="index.html">
+     20201117 GAP Assay
+    </a>
+    <ul class="current collapse-ul">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       2020-11-17 GAP Assay
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../notes/index.html">
+   Notes
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../notes/isntalling%20bio3d.html">
+     2020-02-04 Installing bio3d
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../notes/Neuwald2003_notes.html">
+     Neuwald 2003 notes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../notes/meeting_notes.html">
+     Meeting notes for DMS project
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../notes/Gsp1%20DMS%20Plan%202020-07-01.html">
+     2020-07-01 Gsp1 DMS Plan
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../notes/gsp1_sequence.html">
+     Gsp1 sequence info
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../notes/20201021_results_outline.html">
+     very rough results outline to consider
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../notes/Gsp1%20annotation.html">
+     2020-03-12 Gsp1 annotation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../notes/Gsp1%20DMS%20Plan%20progress.html">
+     2020-07-09 Gsp1 DMS Plan PROGRESS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../notes/For%20David%20%20What%20we%20know%20about%20mutants.html">
+     2020-06-09 Mutation info for David
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../notes/emap%20colony%20size%20notes.html">
+     2020-03-27 EMAP Colony Size Notes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../notes/Tina%20explaining%20the%20Gsp1%20EMAP%20paper%20SASA.html">
+     2020-06-08 Tina on EMAP SASA
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../notes/loose_ends.html">
+     Loose ends - some general things to think about for DMS
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../protocols/index.html">
+   Protocols
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../protocols/GAP_assay.html">
+     GAP Assay
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../protein_preps/index.html">
+   Protein Preps
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../protein_preps/20201204_Mutant_Expression.html">
+     2020-12-04 Gsp1 Mutant Expression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../protein_preps/20201026_Mutant_Expression.html">
+     2020-10-26 Gsp1 Mutant Expression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../protein_preps/20201029_Mutant_Expression.html">
+     2020-10-29 Gsp1 Mutant Expression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../protein_preps/20201205_prep.html">
+     Expression of dominant negative/tolerants mutants
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/GAP_assays/20201117/20201117_GAP_assay.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gtp-loading">
+   GTP Loading
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#results">
+     Results
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="gap-assay">
+<h1>2020-11-17 GAP Assay<a class="headerlink" href="#gap-assay" title="Permalink to this headline">¶</a></h1>
+<p>Running pilot GAP assay with F28V (20201110 prep), F28Y (20201110 prep), and WT (20181206 prep)</p>
+<ul class="simple">
+<li><p>Spun down samples at max speed, 4C</p></li>
+<li><p>measured concentrations (used 1:50 dilution for WT)</p></li>
+</ul>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Sample</p></th>
+<th class="head"><p>ng/mL</p></th>
+<th class="head"><p>concentration</p></th>
+<th class="head"><p>A260/A280</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>WT</p></td>
+<td><p>31</p></td>
+<td><p>1.25 mM</p></td>
+<td><p>0.76</p></td>
+</tr>
+<tr class="row-odd"><td><p>F28V</p></td>
+<td><p>2.588</p></td>
+<td><p>104.3 uM</p></td>
+<td><p>0.92</p></td>
+</tr>
+<tr class="row-even"><td><p>F28Y</p></td>
+<td><p>7.366</p></td>
+<td><p>297 uM</p></td>
+<td><p>0.75</p></td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="gtp-loading">
+<h2>GTP Loading<a class="headerlink" href="#gtp-loading" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Loaded each sample to 20-fold excess GTP, 10 mM EDTA, 1-2 mM DTT</p>
+<ul class="simple">
+<li><p>full set of reagent volumes in the excel sheet at 20201117_loading.xlsx</p></li>
+</ul>
+</li>
+<li><p>Started incubation at 11h00, quenched at 14h00</p></li>
+<li><p>Buffer exchanged on Nap-5 columns, fractionated with 65 uL</p>
+<ul class="simple">
+<li><p>WT: Fractions 3-7, final concentration 3.108 ng/mL 0.78 A260/A280</p></li>
+<li><p>F28V: Fractions 5-7, final concentration 1.054 ng/mL 0.94 A260/A280</p></li>
+<li><p>F28Y: Fractions 2-4, final concentration 1.557 ng/mL 0.77 A260/A280</p></li>
+</ul>
+</li>
+<li><p>During incubation, prepared 50 mL assay buffer:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Reagent</p></th>
+<th class="head"><p>Final Conc</p></th>
+<th class="head"><p>Stock Conc</p></th>
+<th class="head"><p>Volume</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>HEPES pH 7.5</p></td>
+<td><p>40 mM</p></td>
+<td><p>500 mM</p></td>
+<td><p>4 mL</p></td>
+</tr>
+<tr class="row-odd"><td><p>NaCl</p></td>
+<td><p>100 mM</p></td>
+<td><p>4 M</p></td>
+<td><p>1.25 mL</p></td>
+</tr>
+<tr class="row-even"><td><p>MgCl2</p></td>
+<td><p>4 mM</p></td>
+<td><p>1 M</p></td>
+<td><p>200 uL</p></td>
+</tr>
+<tr class="row-odd"><td><p>DTT</p></td>
+<td><p>1 mM</p></td>
+<td><p>1 M</p></td>
+<td><p>50 uL</p></td>
+</tr>
+<tr class="row-even"><td><p>ddH2O</p></td>
+<td><p>—</p></td>
+<td><p>—</p></td>
+<td><p>44.5 mL</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>Spun down the GAP, used 20190116 20 uL aliquot, 103.12 uM. Right before setting up the plate, followed dilution notes from Tina:</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Prepare the SpGAP enzyme (I spin it down with the Gsp1 samples and dilute it in assay buffer shortly before setting up assay using this particular dilution order)</p></li>
+<li><p>SpRNA1 from 20190116 (no His tag) -&gt; 103.12 uM —-&gt; 20 x dilution to make ~5 uM GAP —-&gt;  10 ul of GAP + 190 ul of buffer</p></li>
+<li><p>Dilute 25x to ~ 0.2 uM (200 nM) —&gt;   32 ul of ~5 uM GAP + 768 ul of buffer (This can be measured by Bradford, but skip it, just dilute like in the next step)</p></li>
+<li><p>Dilute 20x to final concentration of 10 nM:  10 ul of ~200 nM SpGAP + 190 ul buffer</p></li>
+</ul>
+</div>
+<ul class="simple">
+<li><p>Edited Tina’s script to set up the plate: 20201117_GAP_Assay.R</p></li>
+<li><p>Samples:</p>
+<ul>
+<li><p>Odd wells have 10 uL of 10 nM GAP (10x, final concentration 1 nM), even wells have 10 uL buffer</p></li>
+<li><p>5 nM of sample: WT (A1/A2), F28V (A3/A4), F28Y (A7/A8)</p></li>
+<li><p>10 nM of sample: F28V (A5/A6), F28Y (A9/A10)</p></li>
+</ul>
+</li>
+<li><p>Spun down <a class="reference external" href="https://www.thermofisher.com/order/catalog/product/PV4406#/PV4406">Phosphate Sensor</a>, LOT 1853001A, CAT PV4406 diluted to 125 uM</p></li>
+<li><p>Used Corning 3881 plates: Black, low-binding, half-area, clear and flat bottom</p></li>
+<li><p>Premixed sensor, Gsp1, and buffer (total volume 110 uL) placed in wells B1-B10 on plate, placed 10 uL GAP (or buffer) in wells A1-A10.</p></li>
+<li><p>Once plate reader was at 30C, put plate on plate holder, transferred 90 uL of Gsp1/sensor premix to wells A1-A10, mixed (and unfortunately added some bubbles), and started the reaction</p></li>
+<li><p>Forgot to pre-warm the samples before mixing by incubating in the plate reader at 30C for ten minutes, but Tina said it doesn’t look like that was an issue, from the beginning of the curves.</p></li>
+</ul>
+<div class="section" id="results">
+<h3>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h3>
+<p>NOTE: FORGOT TO PREWARM …</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./GAP_assays/20201117"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">20201117 GAP Assay</a>
+    <a class='right-next' id="next-link" href="../../notes/index.html" title="next page">Notes</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chris Mathy<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,220 @@
+position,region3,sasa_group_category
+1,effector surface,surface
+2,effector surface,surface
+3,effector surface,surface
+4,effector mixed,mixed
+5,effector surface,surface
+6,effector interface core,interface core
+7,effector interface core,interface core
+8,effector surface,surface
+9,effector surface,surface
+10,effector surface,surface
+11,effector surface,surface
+12,effector surface,surface
+13,effector structure core,structure core
+14,effector structure core,structure core
+15,effector structure core,structure core
+16,effector structure core,structure core
+17,effector structure core,structure core
+18,effector structure core,structure core
+19,effector structure core,structure core
+20,effector structure core,structure core
+21,effector interface core,interface core
+22,effector interface core,interface core
+23,effector structure core,structure core
+24,effector structure core,structure core
+25,effector structure core,structure core
+26,effector mixed,mixed
+27,effector mixed,mixed
+28,effector structure core,structure core
+29,effector structure core,structure core
+30,effector mixed,mixed
+31,effector mixed,mixed
+32,effector structure core,structure core
+33,effector interface core,interface core
+34,effector interface core,interface core
+35,effector interface core,interface core
+36,effector interface core,interface core
+37,effector interface core,interface core
+38,effector mixed,mixed
+39,effector surface,surface
+40,effector surface,surface
+41,effector interface core,interface core
+42,effector mixed,mixed
+43,effector interface core,interface core
+44,effector mixed,mixed
+45,effector interface core,interface core
+46,effector interface core,interface core
+47,effector structure core,structure core
+48,effector interface core,interface core
+49,effector interface core,interface core
+50,effector mixed,mixed
+51,effector mixed,mixed
+52,effector structure core,structure core
+53,effector interface core,interface core
+54,effector structure core,structure core
+55,effector interface core,interface core
+56,effector structure core,structure core
+57,effector interface core,interface core
+58,effector interface core,interface core
+59,effector interface core,interface core
+60,effector mixed,mixed
+61,effector structure core,structure core
+62,effector mixed,mixed
+63,effector structure core,structure core
+64,effector mixed,mixed
+65,effector structure core,structure core
+66,effector interface core,interface core
+67,effector structure core,structure core
+68,effector structure core,structure core
+69,effector interface core,interface core
+70,effector structure core,structure core
+71,effector interface core,interface core
+72,effector interface core,interface core
+73,effector interface core,interface core
+74,effector interface core,interface core
+75,effector interface core,interface core
+76,effector interface core,interface core
+77,effector interface core,interface core
+78,effector interface core,interface core
+79,effector interface core,interface core
+80,effector interface core,interface core
+81,effector structure core,structure core
+82,effector structure core,structure core
+83,effector interface core,interface core
+84,effector surface,surface
+85,effector structure core,structure core
+86,effector surface,surface
+87,effector structure core,structure core
+88,effector structure core,structure core
+89,effector structure core,structure core
+90,effector structure core,structure core
+91,effector structure core,structure core
+92,effector structure core,structure core
+93,effector structure core,structure core
+94,effector structure core,structure core
+95,effector interface core,interface core
+96,effector interface core,interface core
+97,allosteric interface core,interface core
+98,allosteric interface core,interface core
+99,allosteric structure core,structure core
+100,allosteric structure core,structure core
+101,allosteric interface core,interface core
+102,allosteric interface core,interface core
+103,allosteric structure core,structure core
+104,allosteric interface core,interface core
+105,allosteric interface core,interface core
+106,allosteric structure core,structure core
+107,allosteric mixed,mixed
+108,allosteric interface core,interface core
+109,allosteric interface core,interface core
+110,allosteric structure core,structure core
+111,allosteric mixed,mixed
+112,allosteric interface core,interface core
+113,allosteric interface core,interface core
+114,allosteric mixed,mixed
+115,allosteric surface,surface
+116,allosteric surface,surface
+117,allosteric structure core,structure core
+118,allosteric structure core,structure core
+119,allosteric structure core,structure core
+120,allosteric structure core,structure core
+121,allosteric structure core,structure core
+122,allosteric structure core,structure core
+123,allosteric structure core,structure core
+124,allosteric structure core,structure core
+125,allosteric interface core,interface core
+126,allosteric mixed,mixed
+127,allosteric interface core,interface core
+128,allosteric interface core,interface core
+129,allosteric surface,surface
+130,allosteric interface core,interface core
+131,allosteric interface core,interface core
+132,allosteric interface core,interface core
+133,allosteric structure core,structure core
+134,allosteric interface core,interface core
+135,allosteric interface core,interface core
+136,allosteric mixed,mixed
+137,allosteric interface core,interface core
+138,allosteric mixed,mixed
+139,allosteric interface core,interface core
+140,allosteric mixed,mixed
+141,allosteric interface core,interface core
+142,allosteric interface core,interface core
+143,allosteric interface core,interface core
+144,allosteric interface core,interface core
+145,allosteric interface core,interface core
+146,allosteric mixed,mixed
+147,allosteric interface core,interface core
+148,allosteric structure core,structure core
+149,allosteric structure core,structure core
+150,allosteric mixed,mixed
+151,allosteric structure core,structure core
+152,allosteric structure core,structure core
+153,allosteric structure core,structure core
+154,allosteric interface core,interface core
+155,allosteric interface core,interface core
+156,allosteric interface core,interface core
+157,allosteric interface core,interface core
+158,allosteric structure core,structure core
+159,allosteric interface core,interface core
+160,allosteric interface core,interface core
+161,allosteric interface core,interface core
+162,allosteric structure core,structure core
+163,allosteric structure core,structure core
+164,allosteric structure core,structure core
+165,allosteric structure core,structure core
+166,allosteric structure core,structure core
+167,allosteric structure core,structure core
+168,allosteric interface core,interface core
+169,allosteric surface,surface
+170,allosteric interface core,interface core
+171,allosteric interface core,interface core
+172,allosteric surface,surface
+173,allosteric interface core,interface core
+174,allosteric surface,surface
+175,allosteric surface,surface
+176,allosteric structure core,structure core
+177,allosteric surface,surface
+178,allosteric interface core,interface core
+179,allosteric interface core,interface core
+180,allosteric interface core,interface core
+181,allosteric interface core,interface core
+182,allosteric interface core,interface core
+183,C-terminal interface core,interface core
+184,C-terminal mixed,mixed
+185,C-terminal mixed,mixed
+186,C-terminal interface core,interface core
+187,C-terminal surface,surface
+188,C-terminal surface,surface
+189,C-terminal surface,surface
+190,C-terminal surface,surface
+191,C-terminal mixed,mixed
+192,C-terminal surface,surface
+193,C-terminal surface,surface
+194,C-terminal surface,surface
+195,C-terminal mixed,mixed
+196,C-terminal mixed,mixed
+197,C-terminal surface,surface
+198,C-terminal surface,surface
+199,C-terminal mixed,mixed
+200,C-terminal surface,surface
+201,C-terminal surface,surface
+202,C-terminal surface,surface
+203,C-terminal interface core,interface core
+204,C-terminal surface,surface
+205,C-terminal surface,surface
+206,C-terminal interface core,interface core
+207,C-terminal interface core,interface core
+208,C-terminal surface,surface
+209,C-terminal surface,surface
+210,C-terminal surface,surface
+211,C-terminal interface core,interface core
+212,C-terminal interface core,interface core
+213,C-terminal interface core,interface core
+214,C-terminal interface core,interface core
+215,C-terminal surface,surface
+216,C-terminal surface,surface
+217,C-terminal surface,surface
+218,C-terminal surface,surface
+219,C-terminal surface,surface

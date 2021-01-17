@@ -1,0 +1,25 @@
+# Book settings
+title: GAP and GEF Expression Tuning
+author: Chris Mathy
+logo: logo.png
+
+latex:
+  latex_documents:
+    targetname: book.tex
+
+exclude_patterns: []
+
+execute:
+  execute_notebooks: cache
+  allow_errors: true
+  timeout: 300
+
+parse:
+  myst_extended_syntax: true
+
+html:
+  home_page_in_navbar: false
+
+#  sphinx:
+#  config:
+#   html_theme: alabaster

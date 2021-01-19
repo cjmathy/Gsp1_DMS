@@ -27,8 +27,11 @@ sensor <- c('sensor')
 sensor.stock.conc <- 125
 final.Ran.conc <- list()
 final.Ran.conc[[1]] = c(5, 5)
-final.Ran.conc[[2]] = c(5, 5, 10, 10)
-final.Ran.conc[[3]] = c(5, 5, 10, 10)
+final.Ran.conc[[2]] = c(5, 5)
+final.Ran.conc[[3]] = c(5, 5)
+final.Ran.conc[[4]] = c(5, 5)
+final.Ran.conc[[5]] = c(5, 5)
+final.Ran.conc[[6]] = c(5, 5)
 
 GAP.V <- round(reaction.volume/(GAP.stock/GAP.working), 2)
 Ran.premix.to.add <- reaction.volume - GAP.V

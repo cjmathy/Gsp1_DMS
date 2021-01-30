@@ -1,9 +1,12 @@
 # 20200112_plot_CD_HPLC
 
+getwd()
+
+
 library(tidyverse)
 library(scales)
 library(minpack.lm)
-source('ucsf_colors.R')
+source('../../ucsf_colors.R')
 
 # Parsing function, which returns a list of two dataframes per experiment: data and metadata
 parse_CD_file = function(filepath) {
@@ -112,7 +115,7 @@ plot_scan <- function(expt) {
 
 
 # set data directory
-dir = '../data/CD/20201112/'
+dir = '../../data/CD/20201112/'
 
 # import melts
 melts_filenames = dir(path = dir, pattern = '*Melt.txt', full.names = T)

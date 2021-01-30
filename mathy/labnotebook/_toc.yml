@@ -15,8 +15,11 @@ sections:
 - file: GAP_assays/index
   sections:
   - file: GAP_assays/tina_notes
+  - file: GAP_assays/20210121_sensor_calibration
+  - file: GAP_assays/20200122_sensor_calib
   - file: GAP_assays/20210118/20210118_GAP_Assay
   - file: GAP_assays/20210117/20210117_GAP_Assay
+  - file: GAP_assays/20210119/20210120_GAP_Assay
   - file: GAP_assays/20201117/20201117_GAP_assay
 - file: notes/index
   sections:

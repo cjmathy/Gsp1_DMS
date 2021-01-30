@@ -56,7 +56,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Notes" href="../../notes/index.html" />
-    <link rel="prev" title="2021-01-17 GAP Assay" href="../20210117/20210117_GAP_Assay.html" />
+    <link rel="prev" title="2021-01-20 GAP Assay" href="../20210119/20210120_GAP_Assay.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -156,6 +156,16 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../20210121_sensor_calibration.html">
+     2021-01-21 Phosphate Sensor Calibration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../20200122_sensor_calib.html">
+     2020-01-22 Phosphate Sensor Calibration
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../20210118/20210118_GAP_Assay.html">
      2021-01-18 GAP Assay
     </a>
@@ -163,6 +173,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../20210117/20210117_GAP_Assay.html">
      2021-01-17 GAP Assay
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../20210119/20210120_GAP_Assay.html">
+     2021-01-20 GAP Assay
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -331,13 +346,21 @@
   <a class="reference internal nav-link" href="#gtp-loading">
    GTP Loading
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#results">
-     Results
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#setting-up-the-plate">
+   Setting up the plate
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#results">
+   Results
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hplc">
+   HPLC
+  </a>
  </li>
 </ul>
 
@@ -353,10 +376,10 @@
   <div class="section" id="gap-assay">
 <h1>2020-11-17 GAP Assay<a class="headerlink" href="#gap-assay" title="Permalink to this headline">¶</a></h1>
 <p>Running pilot GAP assay with F28V (20201110 prep), F28Y (20201110 prep), and WT (20181206 prep)</p>
-<ul class="simple">
+<ul>
+<li><p>NOTE: I used the wrong extinction coefficient for F28Y throughout this experiment, so the concentration in the assay should be adjusted to account for this. I was using 37675 as the extinction coefficient for all three mutants, when it should be 39165 for F28Y because of the tyrosine mutation (calculated on Expasy)</p></li>
 <li><p>Spun down samples at max speed, 4C</p></li>
-<li><p>measured concentrations (used 1:50 dilution for WT)</p></li>
-</ul>
+<li><p>measured concentrations (used 1:50 dilution for WT)</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Sample</p></th>
@@ -383,6 +406,8 @@
 </tr>
 </tbody>
 </table>
+</li>
+</ul>
 <div class="section" id="gtp-loading">
 <h2>GTP Loading<a class="headerlink" href="#gtp-loading" title="Permalink to this headline">¶</a></h2>
 <ul>
@@ -392,13 +417,6 @@
 </ul>
 </li>
 <li><p>Started incubation at 11h00, quenched at 14h00</p></li>
-<li><p>Buffer exchanged on Nap-5 columns, fractionated with 65 uL</p>
-<ul class="simple">
-<li><p>WT: Fractions 3-7, final concentration 3.108 mg/mL 0.78 A260/A280</p></li>
-<li><p>F28V: Fractions 5-7, final concentration 1.054 mg/mL 0.94 A260/A280</p></li>
-<li><p>F28Y: Fractions 2-4, final concentration 1.557 mg/mL 0.77 A260/A280</p></li>
-</ul>
-</li>
 <li><p>During incubation, prepared 50 mL assay buffer:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -437,6 +455,43 @@
 </tbody>
 </table>
 </li>
+<li><p>After loading, quenched, then buffer exchanged on Nap-5 columns, fractionated with 65 uL</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Sample</p></th>
+<th class="head"><p>Fraction</p></th>
+<th class="head"><p>mg/mL</p></th>
+<th class="head"><p>concentration</p></th>
+<th class="head"><p>A260/A280</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>WT</p></td>
+<td><p>3-7</p></td>
+<td><p>3.108 mg/mL</p></td>
+<td><p>129.5 uM</p></td>
+<td><p>0.78</p></td>
+</tr>
+<tr class="row-odd"><td><p>F28V</p></td>
+<td><p>5-7</p></td>
+<td><p>1.054 mg/mL</p></td>
+<td><p>43.9 uM</p></td>
+<td><p>0.94</p></td>
+</tr>
+<tr class="row-even"><td><p>F28Y</p></td>
+<td><p>2-4</p></td>
+<td><p>1.557 mg/mL</p></td>
+<td><p>64.9 uM</p></td>
+<td><p>0.77</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+</div>
+<div class="section" id="setting-up-the-plate">
+<h2>Setting up the plate<a class="headerlink" href="#setting-up-the-plate" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
 <li><p>Spun down the GAP, used 20190116 20 uL aliquot, 103.12 uM. Right before setting up the plate, followed dilution notes from Tina:</p></li>
 </ul>
 <div class="admonition note">
@@ -463,10 +518,18 @@
 <li><p>Once plate reader was at 30C, put plate on plate holder, transferred 90 uL of Gsp1/sensor premix to wells A1-A10, mixed (and unfortunately added some bubbles), and started the reaction</p></li>
 <li><p>Forgot to pre-warm the samples before mixing by incubating in the plate reader at 30C for ten minutes, but Tina said it doesn’t look like that was an issue, from the beginning of the curves.</p></li>
 </ul>
-<div class="section" id="results">
-<h3>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h3>
-<p>NOTE: FORGOT TO PREWARM …</p>
 </div>
+<div class="section" id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>need to re-compute concetration using the correct extinction coefficient for F28Y</p></li>
+</ul>
+</div>
+<div class="section" id="hplc">
+<h2>HPLC<a class="headerlink" href="#hplc" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Ran S75 Analytical on the HPLC by injecting 100 uL of sample</p></li>
+</ul>
 </div>
 </div>
 
@@ -498,7 +561,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="../20210117/20210117_GAP_Assay.html" title="previous page">2021-01-17 GAP Assay</a>
+    <a class='left-prev' id="prev-link" href="../20210119/20210120_GAP_Assay.html" title="previous page">2021-01-20 GAP Assay</a>
     <a class='right-next' id="next-link" href="../../notes/index.html" title="next page">Notes</a>
 
     </div>

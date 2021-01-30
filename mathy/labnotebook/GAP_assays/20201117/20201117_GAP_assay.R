@@ -27,11 +27,8 @@ sensor <- c('sensor')
 sensor.stock.conc <- 125
 final.Ran.conc <- list()
 final.Ran.conc[[1]] = c(5, 5)
-final.Ran.conc[[2]] = c(5, 5)
-final.Ran.conc[[3]] = c(5, 5)
-final.Ran.conc[[4]] = c(5, 5)
-final.Ran.conc[[5]] = c(5, 5)
-final.Ran.conc[[6]] = c(5, 5)
+final.Ran.conc[[2]] = c(5, 5, 10, 10)
+final.Ran.conc[[3]] = c(5, 5, 10, 10)
 
 GAP.V <- round(reaction.volume/(GAP.stock/GAP.working), 2)
 Ran.premix.to.add <- reaction.volume - GAP.V
@@ -81,6 +78,13 @@ write.table(reaction.mix.table, file = paste0(outdir, "reaction_mix_temp.txt"), 
     group_by(prot) %>% 
     summarise( "total_diluted_125mM_sensor_V" = 1.05 * sum(sensor.V)) )   ### prepare 5 % extra diluted sensor
 index.table
-write.table(index.table, file = paste0(outdir, "index_table_temp.txt"), quote = F, row.names = F, sep = "\t")
 
-
+# need to update index.table, because I used the wrong extinction coefficient for F28Y
+index.table
+index.table %>% 
+  mutate(fin.Ran.conc = case_when(
+    (prot == 'F28Y' & fin.Ran.conc == 5) ~ 5.1976,
+    (prot == 'F28Y' & fin.Ran.conc == 10) ~ 10.395,
+    T ~ fin.Ran.conc
+  )) %>% 
+  write.table(file = paste0(outdir, "index_table_temp2.txt"), quote = F, row.names = F, sep = "\t")

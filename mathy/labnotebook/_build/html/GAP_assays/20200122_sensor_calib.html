@@ -55,7 +55,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="2021-01-18 GAP Assay" href="20210118/20210118_GAP_Assay.html" />
+    <link rel="next" title="2021-01-20 GAP Assay" href="20210120/20210120_GAP_Assay.html" />
     <link rel="prev" title="2021-01-21 Phosphate Sensor Calibration" href="20210121_sensor_calibration.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -98,6 +98,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../journal/20210128_CD.html">
+     2021-01-28 CD
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../journal/20201107_N156W_cloning.html">
      20201107 N156W cloning
     </a>
@@ -108,11 +113,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../journal/2020-11-13%20HPLC%20and%20CD.html">
-     2020-11-13 HPLC and CD with F28V, F28Y
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../journal/20201113_aggregation_test.html">
      2020-11-13 Aggregation Test
     </a>
@@ -120,6 +120,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../journal/20201029_Mutant_Expression.html">
      2020-10-29 Gsp1 Mutant Expression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../journal/20210130_CD.html">
+     2021-01-28 CD
     </a>
    </li>
    <li class="toctree-l2">
@@ -137,8 +142,13 @@
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../analysis/20200112_plot_CD_HPLC.html">
-     20200112_plot_CD_HPLC
+    <a class="reference internal" href="../analysis/2020-11-13%20HPLC%20and%20CD.html">
+     2020-11-13 HPLC and CD with F28V, F28Y
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../analysis/20200112_plot_CD_HPLC-checkpoint.html">
+     20210112_plot_CD_HPLC
     </a>
    </li>
   </ul>
@@ -166,6 +176,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="20210120/20210120_GAP_Assay.html">
+     2021-01-20 GAP Assay
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="20210118/20210118_GAP_Assay.html">
      2021-01-18 GAP Assay
     </a>
@@ -173,11 +188,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="20210117/20210117_GAP_Assay.html">
      2021-01-17 GAP Assay
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="20210119/20210120_GAP_Assay.html">
-     2021-01-20 GAP Assay
     </a>
    </li>
    <li class="toctree-l2">
@@ -237,6 +247,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../notes/For%20David%20%20What%20we%20know%20about%20mutants.html">
      2020-06-09 Mutation info for David
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notes/DELA_instructions.html">
+     DELA Instructions from David Lambright
     </a>
    </li>
    <li class="toctree-l2">
@@ -354,6 +369,20 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#i-need-to-read-in-the-data-from-the-other-gap-assays-and-see-what-the-observed-range-of-values-is">
+   I need to read in the data from the other GAP assays and see what the observed range of values is
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
     </div>
 </div>
     <div id="main-content" class="row">
@@ -366,127 +395,254 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>── <span class=" -Color -Color-Bold">Attaching packages</span> ───────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse 1.3.0 ──
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Green">✔</span> <span class=" -Color -Color-Blue">ggplot2</span> 3.3.2     <span class=" -Color -Color-Green">✔</span> <span class=" -Color -Color-Blue">purrr  </span> 0.3.4
-<span class=" -Color -Color-Green">✔</span> <span class=" -Color -Color-Blue">tibble </span> 3.0.4     <span class=" -Color -Color-Green">✔</span> <span class=" -Color -Color-Blue">dplyr  </span> 1.0.2
-<span class=" -Color -Color-Green">✔</span> <span class=" -Color -Color-Blue">tidyr  </span> 1.1.2     <span class=" -Color -Color-Green">✔</span> <span class=" -Color -Color-Blue">stringr</span> 1.4.0
-<span class=" -Color -Color-Green">✔</span> <span class=" -Color -Color-Blue">readr  </span> 1.4.0     <span class=" -Color -Color-Green">✔</span> <span class=" -Color -Color-Blue">forcats</span> 0.5.0
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>── <span class=" -Color -Color-Bold">Conflicts</span> ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
-<span class=" -Color -Color-Red">✖</span> <span class=" -Color -Color-Blue">dplyr</span>::<span class=" -Color -Color-Green">filter()</span> masks <span class=" -Color -Color-Blue">stats</span>::filter()
-<span class=" -Color -Color-Red">✖</span> <span class=" -Color -Color-Blue">dplyr</span>::<span class=" -Color -Color-Green">lag()</span>    masks <span class=" -Color -Color-Blue">stats</span>::lag()
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">&lt;-</span> <span class="nf">read_delim</span><span class="p">(</span><span class="s">&#39;../../data/GAP_assay/20210121_Phosphate_Calibration.txt&#39;</span><span class="p">,</span>
-                <span class="n">delim</span><span class="o">=</span><span class="s">&#39;\t&#39;</span><span class="p">,</span> <span class="n">col_types</span><span class="o">=</span><span class="nf">cols</span><span class="p">(),</span> <span class="n">skip</span><span class="o">=</span><span class="m">46</span><span class="p">,</span>
-                <span class="n">locale</span> <span class="o">=</span> <span class="n">readr</span><span class="o">::</span><span class="nf">locale</span><span class="p">(</span><span class="n">encoding</span> <span class="o">=</span> <span class="s">&quot;windows-1252&quot;</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message:
-“34 parsing failures.
-row col   expected     actual                                                      file
- 68  -- 19 columns 1 columns  &#39;../../data/GAP_assay/20210121_Phosphate_Calibration.txt&#39;
- 69  -- 19 columns 13 columns &#39;../../data/GAP_assay/20210121_Phosphate_Calibration.txt&#39;
- 70  -- 19 columns 14 columns &#39;../../data/GAP_assay/20210121_Phosphate_Calibration.txt&#39;
- 71  -- 19 columns 14 columns &#39;../../data/GAP_assay/20210121_Phosphate_Calibration.txt&#39;
- 72  -- 19 columns 14 columns &#39;../../data/GAP_assay/20210121_Phosphate_Calibration.txt&#39;
-... ... .......... .......... .........................................................
-See problems(...) for more details.
-”
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">head</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table>
-<caption>A tibble: 6 × 19</caption>
-<thead>
-	<tr><th scope=col>Time</th><th scope=col>T° 425,457</th><th scope=col>A1</th><th scope=col>A2</th><th scope=col>A3</th><th scope=col>A4</th><th scope=col>A5</th><th scope=col>A6</th><th scope=col>A7</th><th scope=col>A8</th><th scope=col>A9</th><th scope=col>A10</th><th scope=col>A11</th><th scope=col>A12</th><th scope=col>B1</th><th scope=col>B2</th><th scope=col>B3</th><th scope=col>B5</th><th scope=col>B6</th></tr>
-	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><td>0:00:00</td><td>30.0</td><td>4733</td><td>32355</td><td>5605</td><td>33505</td><td>8620</td><td>36281</td><td>12657</td><td>37134</td><td>17636</td><td>38142</td><td>20746</td><td>38007</td><td>27205</td><td>39135</td><td>31164</td><td>34559</td><td>33558</td></tr>
-	<tr><td>0:00:09</td><td>30.0</td><td>4793</td><td>32496</td><td>5649</td><td>33630</td><td>8684</td><td>36308</td><td>12875</td><td>37198</td><td>17649</td><td>37781</td><td>20886</td><td>38587</td><td>27410</td><td>39282</td><td>31043</td><td>34485</td><td>33951</td></tr>
-	<tr><td>0:00:18</td><td>30.0</td><td>4777</td><td>32390</td><td>5638</td><td>33516</td><td>8655</td><td>36232</td><td>12789</td><td>37298</td><td>17606</td><td>38083</td><td>20884</td><td>38192</td><td>27180</td><td>39175</td><td>31389</td><td>34570</td><td>33646</td></tr>
-	<tr><td>0:00:27</td><td>30.0</td><td>4779</td><td>32499</td><td>5681</td><td>33998</td><td>8664</td><td>36287</td><td>12871</td><td>37056</td><td>17618</td><td>37851</td><td>20824</td><td>38152</td><td>27337</td><td>39001</td><td>31124</td><td>34596</td><td>33643</td></tr>
-	<tr><td>0:00:36</td><td>30.0</td><td>4801</td><td>32461</td><td>5717</td><td>33487</td><td>8698</td><td>36684</td><td>12814</td><td>36872</td><td>17597</td><td>37921</td><td>20738</td><td>38038</td><td>27400</td><td>39176</td><td>31122</td><td>34690</td><td>33672</td></tr>
-	<tr><td>0:00:45</td><td>30.0</td><td>4820</td><td>32656</td><td>5722</td><td>33691</td><td>8666</td><td>36204</td><td>12855</td><td>36806</td><td>17781</td><td>37928</td><td>20814</td><td>37937</td><td>27386</td><td>38879</td><td>31041</td><td>34450</td><td>33363</td></tr>
-</tbody>
-</table>
-</div></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
 <span class="nf">library</span><span class="p">(</span><span class="n">readxl</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">lubridate</span><span class="p">)</span>
+
+<span class="c1"># set theme for plotting</span>
+
+<span class="c1"># Set font sizes</span>
+<span class="n">SMALL_SIZE</span> <span class="o">=</span> <span class="m">10</span>
+<span class="n">MEDIUM_SIZE</span> <span class="o">=</span> <span class="m">11</span>
+<span class="n">BIG_SIZE</span> <span class="o">=</span> <span class="m">12</span>
+
+<span class="c1"># SMALL_SIZE = 6</span>
+<span class="c1"># MEDIUM_SIZE = 7</span>
+<span class="c1"># BIG_SIZE = 8</span>
+
+<span class="n">theme_custom</span> <span class="o">&lt;-</span> <span class="nf">theme_bw</span><span class="p">()</span> <span class="o">+</span>
+  <span class="nf">theme</span><span class="p">(</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">family</span> <span class="o">=</span> <span class="s">&quot;Helvetica&quot;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">BIG_SIZE</span><span class="p">),</span>
+    <span class="n">axis.title</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="n">BIG_SIZE</span><span class="p">),</span>
+    <span class="n">axis.text</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="n">BIG_SIZE</span><span class="p">),</span>
+    <span class="n">axis.ticks</span> <span class="o">=</span> <span class="nf">element_line</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="m">0.05</span><span class="p">),</span>
+    <span class="n">axis.ticks.length</span> <span class="o">=</span> <span class="nf">unit</span><span class="p">(</span><span class="m">0.05</span><span class="p">,</span> <span class="s">&#39;cm&#39;</span><span class="p">),</span>
+<span class="c1">#     legend.position = &#39;right&#39;,</span>
+<span class="c1">#     legend.spacing.y = unit(0.01, &#39;cm&#39;),</span>
+<span class="c1">#     legend.box = &#39;horizontal&#39;,</span>
+<span class="c1">#     legend.box.just = &#39;left&#39;,</span>
+<span class="c1">#     legend.text = element_text(size = SMALL_SIZE),</span>
+<span class="c1">#     legend.title = element_text(size = SMALL_SIZE),</span>
+<span class="c1">#     legend.margin = margin(t = 0, unit=&#39;cm&#39;),</span>
+    <span class="n">axis.line</span> <span class="o">=</span> <span class="nf">element_line</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">),</span>
+    <span class="n">strip.text.x</span> <span class="o">=</span> <span class="nf">element_text</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="n">SMALL_SIZE</span><span class="p">)</span>
+  <span class="p">)</span>
+
+<span class="c1"># options(repr.plot.width=20, repr.plot.height=5)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">read_excel</span><span class="p">(</span><span class="s">&#39;../GAP_assays//20210121_sensor_calib.xlsx&#39;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">plate_setup</span> <span class="o">&lt;-</span> <span class="nf">read_excel</span><span class="p">(</span><span class="s">&#39;./20210121_sensor_calib.xlsx&#39;</span><span class="p">)</span>
+
+<span class="n">d_calib</span> <span class="o">&lt;-</span>
+    <span class="nf">read_delim</span><span class="p">(</span><span class="s">&#39;../../data/GAP_assay/20210121_Phosphate_Calibration.txt&#39;</span><span class="p">,</span>
+               <span class="n">delim</span><span class="o">=</span><span class="s">&#39;\t&#39;</span><span class="p">,</span> <span class="n">col_types</span><span class="o">=</span><span class="nf">cols</span><span class="p">(),</span> <span class="n">skip</span><span class="o">=</span><span class="m">46</span><span class="p">,</span> <span class="n">n_max</span> <span class="o">=</span> <span class="m">67</span><span class="p">,</span>
+               <span class="n">locale</span> <span class="o">=</span> <span class="n">readr</span><span class="o">::</span><span class="nf">locale</span><span class="p">(</span><span class="n">encoding</span> <span class="o">=</span> <span class="s">&quot;windows-1252&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+    <span class="nf">mutate</span><span class="p">(</span><span class="n">timepoint</span> <span class="o">=</span> <span class="nf">row_number</span><span class="p">())</span> <span class="o">%&gt;%</span> 
+    <span class="nf">pivot_longer</span><span class="p">(</span><span class="n">cols</span> <span class="o">=</span> <span class="n">`A1`</span><span class="o">:</span><span class="n">`B6`</span><span class="p">,</span> <span class="n">names_to</span> <span class="o">=</span> <span class="s">&#39;well&#39;</span><span class="p">,</span> <span class="n">values_to</span> <span class="o">=</span> <span class="s">&#39;fluorescence&#39;</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+    <span class="nf">left_join</span><span class="p">(</span><span class="n">plate_setup</span> <span class="o">%&gt;%</span> <span class="nf">select</span><span class="p">(</span><span class="n">well</span><span class="p">,</span> <span class="n">`sensor ID`</span><span class="p">,</span> <span class="n">`final conc P (uM)`</span><span class="p">),</span> <span class="n">by</span><span class="o">=</span><span class="s">&#39;well&#39;</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+    <span class="nf">select</span><span class="p">(</span><span class="s">&#39;time&#39;</span> <span class="o">=</span> <span class="n">Time</span><span class="p">,</span> <span class="n">timepoint</span><span class="p">,</span> <span class="n">well</span><span class="p">,</span> <span class="n">fluorescence</span><span class="p">,</span> <span class="n">`sensor ID`</span><span class="p">,</span> <span class="s">&#39;phosphate (uM)&#39;</span> <span class="o">=</span> <span class="n">`final conc P (uM)`</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+    <span class="nf">mutate</span><span class="p">(</span><span class="n">`sensor ID`</span> <span class="o">=</span> <span class="nf">case_when</span><span class="p">(</span><span class="n">`sensor ID`</span> <span class="o">==</span> <span class="m">1</span> <span class="o">~</span> <span class="s">&#39;11/17 aliquot&#39;</span><span class="p">,</span> <span class="n">`sensor ID`</span> <span class="o">==</span> <span class="m">2</span> <span class="o">~</span> <span class="s">&#39;11/22 aliquot&#39;</span><span class="p">))</span>
+
+<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">12</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">8</span><span class="p">)</span>
+
+<span class="n">d_calib</span> <span class="o">%&gt;%</span> 
+<span class="c1">#     filter(timepoint %in% c(1,67)) %&gt;% </span>
+    <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">`phosphate (uM)`</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">fluorescence</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="nf">factor</span><span class="p">(</span><span class="n">`sensor ID`</span><span class="p">)))</span> <span class="o">+</span> 
+    <span class="nf">geom_point</span><span class="p">()</span> <span class="o">+</span> 
+<span class="c1">#     facet_grid(cols = vars(timepoint)) +</span>
+    <span class="n">theme_custom</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/20200122_sensor_calib_2_0.png" src="../_images/20200122_sensor_calib_2_0.png" />
+</div>
+</div>
+<ul class="simple">
+<li><p>we need to figure out which one is wrong…</p></li>
+</ul>
+<div class="section" id="i-need-to-read-in-the-data-from-the-other-gap-assays-and-see-what-the-observed-range-of-values-is">
+<h2>I need to read in the data from the other GAP assays and see what the observed range of values is<a class="headerlink" href="#i-need-to-read-in-the-data-from-the-other-gap-assays-and-see-what-the-observed-range-of-values-is" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># 20210117 DATA</span>
+
+<span class="c1"># Remove the WT samples in wells C3 and C4 because the rxn vol was incorrect (see notebook entry)</span>
+
+<span class="n">plate_setup</span> <span class="o">&lt;-</span>
+    <span class="nf">read_delim</span><span class="p">(</span><span class="s">&#39;./20210117/index_table_temp_CORRECTED.txt&#39;</span><span class="p">,</span> <span class="n">delim</span><span class="o">=</span><span class="s">&#39;\t&#39;</span><span class="p">,</span> <span class="n">col_types</span><span class="o">=</span><span class="nf">cols</span><span class="p">())</span> <span class="o">%&gt;%</span> 
+    <span class="nf">mutate</span><span class="p">(</span><span class="n">`sensor ID`</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">),</span>
+           <span class="s">&#39;loading&#39;</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+    <span class="nf">filter</span><span class="p">(</span><span class="o">!</span> <span class="n">well</span> <span class="o">%in%</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;C3&#39;</span><span class="p">,</span> <span class="s">&#39;C4&#39;</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+    <span class="nf">select</span><span class="p">(</span><span class="s">&#39;mutant&#39;</span> <span class="o">=</span> <span class="n">prot</span><span class="p">,</span> <span class="n">well</span><span class="p">,</span> <span class="n">`sensor ID`</span><span class="p">,</span> <span class="n">loading</span><span class="p">,</span> <span class="s">&#39;gsp1_conc&#39;</span> <span class="o">=</span> <span class="n">fin.Ran.conc</span><span class="p">)</span>
+    
+<span class="n">d_20210117</span> <span class="o">&lt;-</span>
+    <span class="nf">read_delim</span><span class="p">(</span><span class="s">&#39;../../data/GAP_assay/20210117_GAP_assay.txt&#39;</span><span class="p">,</span>
+               <span class="n">delim</span><span class="o">=</span><span class="s">&#39;\t&#39;</span><span class="p">,</span> <span class="n">col_types</span><span class="o">=</span><span class="nf">cols</span><span class="p">(),</span> <span class="n">skip</span><span class="o">=</span><span class="m">46</span><span class="p">,</span> <span class="n">n_max</span> <span class="o">=</span> <span class="m">721</span><span class="p">,</span>
+               <span class="n">locale</span> <span class="o">=</span> <span class="n">readr</span><span class="o">::</span><span class="nf">locale</span><span class="p">(</span><span class="n">encoding</span> <span class="o">=</span> <span class="s">&quot;windows-1252&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+    <span class="nf">mutate</span><span class="p">(</span><span class="n">timepoint</span> <span class="o">=</span> <span class="nf">row_number</span><span class="p">())</span> <span class="o">%&gt;%</span>
+    <span class="nf">pivot_longer</span><span class="p">(</span><span class="n">cols</span> <span class="o">=</span> <span class="n">`C1`</span><span class="o">:</span><span class="n">`C12`</span><span class="p">,</span> <span class="n">names_to</span> <span class="o">=</span> <span class="s">&#39;well&#39;</span><span class="p">,</span> <span class="n">values_to</span> <span class="o">=</span> <span class="s">&#39;fluorescence&#39;</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+    <span class="nf">separate</span><span class="p">(</span><span class="s">&#39;well&#39;</span><span class="p">,</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;row&#39;</span><span class="p">,</span> <span class="s">&#39;col&#39;</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">remove</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">convert</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+    <span class="nf">inner_join</span><span class="p">(</span><span class="n">plate_setup</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s">&#39;well&#39;</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+    <span class="nf">mutate</span><span class="p">(</span><span class="n">`GAP conc [nm]`</span> <span class="o">=</span> <span class="nf">factor</span><span class="p">(</span><span class="nf">ifelse</span><span class="p">(</span><span class="n">col</span> <span class="o">%%</span> <span class="m">2</span> <span class="o">==</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">)))</span> <span class="o">%&gt;%</span> 
+    <span class="nf">select</span><span class="p">(</span><span class="s">&#39;time&#39;</span> <span class="o">=</span> <span class="n">Time</span><span class="p">,</span> <span class="n">timepoint</span><span class="p">,</span> <span class="n">mutant</span><span class="p">,</span> <span class="n">loading</span><span class="p">,</span> <span class="n">well</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">fluorescence</span><span class="p">,</span> <span class="n">`sensor ID`</span><span class="p">,</span> <span class="n">gsp1_conc</span><span class="p">,</span> <span class="n">`GAP conc [nm]`</span><span class="p">)</span>
+
+<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">24</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">4</span><span class="p">)</span>
+
+<span class="n">d_20210117</span> <span class="o">%&gt;%</span> 
+    <span class="nf">mutate</span><span class="p">(</span><span class="s">&#39;label&#39;</span> <span class="o">=</span> <span class="nf">paste</span><span class="p">(</span><span class="n">mutant</span><span class="p">,</span> <span class="n">loading</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;_&#39;</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+    <span class="nf">mutate</span><span class="p">(</span><span class="n">minutes</span> <span class="o">=</span> <span class="nf">period_to_seconds</span><span class="p">(</span><span class="nf">hms</span><span class="p">(</span><span class="n">time</span><span class="p">))</span><span class="o">/</span><span class="m">60</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+    <span class="nf">filter</span><span class="p">(</span><span class="n">minutes</span> <span class="o">&lt;</span> <span class="m">30</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+    <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">minutes</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">fluorescence</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">`GAP conc [nm]`</span><span class="p">))</span> <span class="o">+</span> 
+    <span class="nf">geom_point</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="m">0.5</span><span class="p">)</span> <span class="o">+</span>
+    <span class="nf">facet_grid</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="nf">vars</span><span class="p">(</span><span class="n">label</span><span class="p">))</span> <span class="o">+</span>
+    <span class="n">theme_custom</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/20200122_sensor_calib_4_0.png" src="../_images/20200122_sensor_calib_4_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># 20210118 DATA</span>
+
+
+<span class="n">plate_setup</span> <span class="o">&lt;-</span>
+    <span class="nf">read_delim</span><span class="p">(</span><span class="s">&#39;./20210118/index_table_temp.txt&#39;</span><span class="p">,</span> <span class="n">delim</span><span class="o">=</span><span class="s">&#39;\t&#39;</span><span class="p">,</span> <span class="n">col_types</span><span class="o">=</span><span class="nf">cols</span><span class="p">())</span> <span class="o">%&gt;%</span> 
+    <span class="nf">mutate</span><span class="p">(</span><span class="n">`sensor ID`</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">),</span>
+           <span class="s">&#39;loading&#39;</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+    <span class="nf">select</span><span class="p">(</span><span class="s">&#39;mutant&#39;</span> <span class="o">=</span> <span class="n">prot</span><span class="p">,</span> <span class="n">well</span><span class="p">,</span> <span class="n">`sensor ID`</span><span class="p">,</span> <span class="n">loading</span><span class="p">,</span> <span class="s">&#39;gsp1_conc&#39;</span> <span class="o">=</span> <span class="n">fin.Ran.conc</span><span class="p">)</span>
+    
+<span class="n">d_20210118</span> <span class="o">&lt;-</span>
+    <span class="nf">read_delim</span><span class="p">(</span><span class="s">&#39;../../data/GAP_assay/20210118_GAP_assay.txt&#39;</span><span class="p">,</span>
+               <span class="n">delim</span><span class="o">=</span><span class="s">&#39;\t&#39;</span><span class="p">,</span> <span class="n">col_types</span><span class="o">=</span><span class="nf">cols</span><span class="p">(),</span> <span class="n">skip</span><span class="o">=</span><span class="m">46</span><span class="p">,</span> <span class="n">n_max</span> <span class="o">=</span> <span class="m">721</span><span class="p">,</span>
+               <span class="n">locale</span> <span class="o">=</span> <span class="n">readr</span><span class="o">::</span><span class="nf">locale</span><span class="p">(</span><span class="n">encoding</span> <span class="o">=</span> <span class="s">&quot;windows-1252&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+    <span class="nf">mutate</span><span class="p">(</span><span class="n">timepoint</span> <span class="o">=</span> <span class="nf">row_number</span><span class="p">())</span> <span class="o">%&gt;%</span>
+    <span class="nf">pivot_longer</span><span class="p">(</span><span class="n">cols</span> <span class="o">=</span> <span class="n">`E1`</span><span class="o">:</span><span class="n">`E12`</span><span class="p">,</span> <span class="n">names_to</span> <span class="o">=</span> <span class="s">&#39;well&#39;</span><span class="p">,</span> <span class="n">values_to</span> <span class="o">=</span> <span class="s">&#39;fluorescence&#39;</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+    <span class="nf">separate</span><span class="p">(</span><span class="s">&#39;well&#39;</span><span class="p">,</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;row&#39;</span><span class="p">,</span> <span class="s">&#39;col&#39;</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">remove</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">convert</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+    <span class="nf">inner_join</span><span class="p">(</span><span class="n">plate_setup</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s">&#39;well&#39;</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+    <span class="nf">mutate</span><span class="p">(</span><span class="n">`GAP conc [nm]`</span> <span class="o">=</span> <span class="nf">factor</span><span class="p">(</span><span class="nf">ifelse</span><span class="p">(</span><span class="n">col</span> <span class="o">%%</span> <span class="m">2</span> <span class="o">==</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">)))</span> <span class="o">%&gt;%</span> 
+    <span class="nf">select</span><span class="p">(</span><span class="s">&#39;time&#39;</span> <span class="o">=</span> <span class="n">Time</span><span class="p">,</span> <span class="n">timepoint</span><span class="p">,</span> <span class="n">mutant</span><span class="p">,</span> <span class="n">loading</span><span class="p">,</span> <span class="n">well</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">fluorescence</span><span class="p">,</span> <span class="n">`sensor ID`</span><span class="p">,</span> <span class="n">gsp1_conc</span><span class="p">,</span> <span class="n">`GAP conc [nm]`</span><span class="p">)</span>
+
+<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">24</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">4</span><span class="p">)</span>
+
+<span class="n">d_20210118</span> <span class="o">%&gt;%</span> 
+    <span class="nf">mutate</span><span class="p">(</span><span class="s">&#39;label&#39;</span> <span class="o">=</span> <span class="nf">paste</span><span class="p">(</span><span class="n">mutant</span><span class="p">,</span> <span class="n">loading</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;_&#39;</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+    <span class="nf">mutate</span><span class="p">(</span><span class="n">minutes</span> <span class="o">=</span> <span class="nf">period_to_seconds</span><span class="p">(</span><span class="nf">hms</span><span class="p">(</span><span class="n">time</span><span class="p">))</span><span class="o">/</span><span class="m">60</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+    <span class="nf">filter</span><span class="p">(</span><span class="n">minutes</span> <span class="o">&lt;</span> <span class="m">30</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+    <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">minutes</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">fluorescence</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">`GAP conc [nm]`</span><span class="p">))</span> <span class="o">+</span> 
+    <span class="nf">geom_point</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="m">0.5</span><span class="p">)</span> <span class="o">+</span>
+    <span class="nf">facet_grid</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="nf">vars</span><span class="p">(</span><span class="n">label</span><span class="p">))</span> <span class="o">+</span>
+    <span class="n">theme_custom</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/20200122_sensor_calib_5_0.png" src="../_images/20200122_sensor_calib_5_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># 20210119 DATA</span>
+
+
+<span class="n">plate_setup</span> <span class="o">&lt;-</span>
+    <span class="nf">read_delim</span><span class="p">(</span><span class="s">&#39;./20210119/index_table_temp.txt&#39;</span><span class="p">,</span> <span class="n">delim</span><span class="o">=</span><span class="s">&#39;\t&#39;</span><span class="p">,</span> <span class="n">col_types</span><span class="o">=</span><span class="nf">cols</span><span class="p">())</span> <span class="o">%&gt;%</span> 
+    <span class="nf">mutate</span><span class="p">(</span><span class="n">`sensor ID`</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">),</span>
+           <span class="s">&#39;loading&#39;</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;A&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">,</span><span class="s">&#39;B&#39;</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+    <span class="nf">select</span><span class="p">(</span><span class="s">&#39;mutant&#39;</span> <span class="o">=</span> <span class="n">prot</span><span class="p">,</span> <span class="n">well</span><span class="p">,</span> <span class="n">`sensor ID`</span><span class="p">,</span> <span class="n">loading</span><span class="p">,</span> <span class="s">&#39;gsp1_conc&#39;</span> <span class="o">=</span> <span class="n">fin.Ran.conc</span><span class="p">)</span>
+    
+<span class="n">d_20210119</span> <span class="o">&lt;-</span>
+    <span class="nf">read_delim</span><span class="p">(</span><span class="s">&#39;../../data/GAP_assay/20210119_GAP_assay.txt&#39;</span><span class="p">,</span>
+               <span class="n">delim</span><span class="o">=</span><span class="s">&#39;\t&#39;</span><span class="p">,</span> <span class="n">col_types</span><span class="o">=</span><span class="nf">cols</span><span class="p">(),</span> <span class="n">skip</span><span class="o">=</span><span class="m">46</span><span class="p">,</span> <span class="n">n_max</span> <span class="o">=</span> <span class="m">721</span><span class="p">,</span>
+               <span class="n">locale</span> <span class="o">=</span> <span class="n">readr</span><span class="o">::</span><span class="nf">locale</span><span class="p">(</span><span class="n">encoding</span> <span class="o">=</span> <span class="s">&quot;windows-1252&quot;</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+    <span class="nf">mutate</span><span class="p">(</span><span class="n">timepoint</span> <span class="o">=</span> <span class="nf">row_number</span><span class="p">())</span> <span class="o">%&gt;%</span>
+    <span class="nf">pivot_longer</span><span class="p">(</span><span class="n">cols</span> <span class="o">=</span> <span class="n">`G1`</span><span class="o">:</span><span class="n">`G12`</span><span class="p">,</span> <span class="n">names_to</span> <span class="o">=</span> <span class="s">&#39;well&#39;</span><span class="p">,</span> <span class="n">values_to</span> <span class="o">=</span> <span class="s">&#39;fluorescence&#39;</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+    <span class="nf">separate</span><span class="p">(</span><span class="s">&#39;well&#39;</span><span class="p">,</span> <span class="nf">c</span><span class="p">(</span><span class="s">&#39;row&#39;</span><span class="p">,</span> <span class="s">&#39;col&#39;</span><span class="p">),</span> <span class="n">sep</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">remove</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">convert</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+    <span class="nf">inner_join</span><span class="p">(</span><span class="n">plate_setup</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="s">&#39;well&#39;</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+    <span class="nf">mutate</span><span class="p">(</span><span class="n">`GAP conc [nm]`</span> <span class="o">=</span> <span class="nf">factor</span><span class="p">(</span><span class="nf">ifelse</span><span class="p">(</span><span class="n">col</span> <span class="o">%%</span> <span class="m">2</span> <span class="o">==</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">)))</span> <span class="o">%&gt;%</span> 
+    <span class="nf">select</span><span class="p">(</span><span class="s">&#39;time&#39;</span> <span class="o">=</span> <span class="n">Time</span><span class="p">,</span> <span class="n">timepoint</span><span class="p">,</span> <span class="n">mutant</span><span class="p">,</span> <span class="n">loading</span><span class="p">,</span> <span class="n">well</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">fluorescence</span><span class="p">,</span> <span class="n">`sensor ID`</span><span class="p">,</span> <span class="n">gsp1_conc</span><span class="p">,</span> <span class="n">`GAP conc [nm]`</span><span class="p">)</span>
+
+<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">24</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">4</span><span class="p">)</span>
+
+<span class="n">d_20210119</span> <span class="o">%&gt;%</span> 
+    <span class="nf">mutate</span><span class="p">(</span><span class="s">&#39;label&#39;</span> <span class="o">=</span> <span class="nf">paste</span><span class="p">(</span><span class="n">mutant</span><span class="p">,</span> <span class="n">loading</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s">&#39;_&#39;</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+    <span class="nf">mutate</span><span class="p">(</span><span class="n">minutes</span> <span class="o">=</span> <span class="nf">period_to_seconds</span><span class="p">(</span><span class="nf">hms</span><span class="p">(</span><span class="n">time</span><span class="p">))</span><span class="o">/</span><span class="m">60</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+    <span class="nf">filter</span><span class="p">(</span><span class="n">minutes</span> <span class="o">&lt;</span> <span class="m">30</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+    <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">minutes</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">fluorescence</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">`GAP conc [nm]`</span><span class="p">))</span> <span class="o">+</span> 
+    <span class="nf">geom_point</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="m">0.5</span><span class="p">)</span> <span class="o">+</span>
+    <span class="nf">facet_grid</span><span class="p">(</span><span class="n">col</span><span class="o">=</span><span class="nf">vars</span><span class="p">(</span><span class="n">label</span><span class="p">))</span> <span class="o">+</span>
+    <span class="n">theme_custom</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/20200122_sensor_calib_6_0.png" src="../_images/20200122_sensor_calib_6_0.png" />
+</div>
+</div>
+<p>After discussing with Tina, it looks like I messed up something with the 11/17 sensor, but the 11/22 sensor looks good, so we will fit a curve to that</p>
+<p>Tina’s method from the paper was:</p>
+<ul class="simple">
+<li><p>ignore phoshpate concentrations above 60% of the sensor (so up to 12 uM phopshate for 20 uM sensor)</p></li>
+<li><p>compute the mean value of all timepoints of the 0 phosphate well (call this the blank)</p></li>
+<li><p>subtract the blank value from all other measurements, effectively zeroing the minimum</p></li>
+<li><p>fit a line through all of the points</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">d_calib2</span> <span class="o">&lt;-</span>
+    <span class="n">d_calib</span> <span class="o">%&gt;%</span> 
+    <span class="nf">filter</span><span class="p">(</span><span class="n">`sensor ID`</span> <span class="o">==</span> <span class="s">&#39;11/22 aliquot&#39;</span><span class="p">,</span> <span class="n">`phosphate (uM)`</span> <span class="o">&lt;</span> <span class="m">13</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+    <span class="nf">select</span><span class="p">(</span><span class="n">well</span><span class="p">,</span> <span class="n">`phosphate (uM)`</span><span class="p">,</span> <span class="n">fluorescence</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+    <span class="nf">group_by</span><span class="p">(</span><span class="n">well</span><span class="p">)</span> <span class="o">%&gt;%</span> 
+    <span class="nf">mutate</span><span class="p">(</span><span class="s">&#39;mean_fluorescence&#39;</span> <span class="o">=</span> <span class="nf">mean</span><span class="p">(</span><span class="n">fluorescence</span><span class="p">))</span> <span class="o">%&gt;%</span> 
+    <span class="nf">ungroup</span><span class="p">()</span> <span class="o">%&gt;%</span> 
+    <span class="nf">mutate</span><span class="p">(</span><span class="s">&#39;blank_mean_fluorescence&#39;</span> <span class="o">=</span> <span class="nf">min</span><span class="p">(</span><span class="n">mean_fluorescence</span><span class="p">),</span>
+           <span class="s">&#39;zeroed_fluorescence&#39;</span> <span class="o">=</span> <span class="n">fluorescence</span><span class="o">-</span><span class="n">blank_mean_fluorescence</span><span class="p">)</span>
+
+
+<span class="nf">library</span><span class="p">(</span><span class="n">broom</span><span class="p">)</span>
+<span class="n">calibration</span> <span class="o">&lt;-</span> <span class="nf">tidy</span><span class="p">(</span><span class="nf">lm</span><span class="p">(</span><span class="n">`phosphate (uM)`</span> <span class="o">~</span> <span class="n">zeroed_fluorescence</span><span class="p">,</span> <span class="n">d_calib2</span><span class="p">))</span>
+<span class="n">calibration</span>
+
+<span class="n">intercept</span> <span class="o">&lt;-</span> <span class="n">calibration</span><span class="o">$</span><span class="n">estimate</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>
+<span class="n">slope</span> <span class="o">&lt;-</span> <span class="n">calibration</span><span class="o">$</span><span class="n">estimate</span><span class="p">[</span><span class="m">2</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html"><table>
-<caption>A tibble: 17 × 9</caption>
+<caption>A tibble: 2 × 5</caption>
 <thead>
-	<tr><th scope=col>well</th><th scope=col>sample</th><th scope=col>sensor</th><th scope=col>volume of P stock (uL)</th><th scope=col>volume of buffer (uL)</th><th scope=col>conc of 2x P (uM)</th><th scope=col>final conc P (uM)</th><th scope=col>P stock conc (uM)</th><th scope=col>volume of 2x P</th></tr>
-	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+	<tr><th scope=col>term</th><th scope=col>estimate</th><th scope=col>std.error</th><th scope=col>statistic</th><th scope=col>p.value</th></tr>
+	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
 </thead>
 <tbody>
-	<tr><td>A1 </td><td>buffer 2</td><td>2</td><td> 0</td><td>50</td><td> 0</td><td> 0.0</td><td> 0.0</td><td> 0</td></tr>
-	<tr><td>A2 </td><td>buffer 1</td><td>1</td><td> 0</td><td>50</td><td> 0</td><td> 0.0</td><td> 0.0</td><td> 0</td></tr>
-	<tr><td>A3 </td><td>1       </td><td>2</td><td> 4</td><td>46</td><td> 1</td><td> 0.5</td><td>12.5</td><td>50</td></tr>
-	<tr><td>A4 </td><td>2       </td><td>1</td><td> 8</td><td>42</td><td> 2</td><td> 1.0</td><td>12.5</td><td>50</td></tr>
-	<tr><td>A5 </td><td>3       </td><td>2</td><td>16</td><td>34</td><td> 4</td><td> 2.0</td><td>12.5</td><td>50</td></tr>
-	<tr><td>A6 </td><td>4       </td><td>1</td><td>24</td><td>26</td><td> 6</td><td> 3.0</td><td>12.5</td><td>50</td></tr>
-	<tr><td>A7 </td><td>5       </td><td>2</td><td> 8</td><td>42</td><td> 8</td><td> 4.0</td><td>50.0</td><td>50</td></tr>
-	<tr><td>A8 </td><td>6       </td><td>1</td><td>10</td><td>40</td><td>10</td><td> 5.0</td><td>50.0</td><td>50</td></tr>
-	<tr><td>A9 </td><td>7       </td><td>2</td><td>12</td><td>38</td><td>12</td><td> 6.0</td><td>50.0</td><td>50</td></tr>
-	<tr><td>A10</td><td>8       </td><td>1</td><td>14</td><td>36</td><td>14</td><td> 7.0</td><td>50.0</td><td>50</td></tr>
-	<tr><td>A11</td><td>9       </td><td>2</td><td>16</td><td>34</td><td>16</td><td> 8.0</td><td>50.0</td><td>50</td></tr>
-	<tr><td>A12</td><td>10      </td><td>1</td><td>18</td><td>32</td><td>18</td><td> 9.0</td><td>50.0</td><td>50</td></tr>
-	<tr><td>B1 </td><td>11      </td><td>2</td><td>20</td><td>30</td><td>20</td><td>10.0</td><td>50.0</td><td>50</td></tr>
-	<tr><td>B2 </td><td>12      </td><td>1</td><td>22</td><td>28</td><td>22</td><td>11.0</td><td>50.0</td><td>50</td></tr>
-	<tr><td>B3 </td><td>13      </td><td>2</td><td>24</td><td>26</td><td>24</td><td>12.0</td><td>50.0</td><td>50</td></tr>
-	<tr><td>B6 </td><td>14      </td><td>2</td><td>28</td><td>22</td><td>28</td><td>14.0</td><td>50.0</td><td>50</td></tr>
-	<tr><td>B5 </td><td>15      </td><td>2</td><td>30</td><td>20</td><td>30</td><td>15.0</td><td>50.0</td><td>50</td></tr>
+	<tr><td>(Intercept)        </td><td>0.2113335605</td><td>1.978683e-02</td><td> 10.68052</td><td>2.892773e-24</td></tr>
+	<tr><td>zeroed_fluorescence</td><td>0.0004629023</td><td>1.392792e-06</td><td>332.35557</td><td>0.000000e+00</td></tr>
 </tbody>
 </table>
 </div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&#39;readxl&#39;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">12</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">8</span><span class="p">)</span>
+
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">d_calib2</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">zeroed_fluorescence</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">`phosphate (uM)`</span><span class="p">))</span> <span class="o">+</span> 
+    <span class="nf">geom_point</span><span class="p">()</span> <span class="o">+</span>
+    <span class="nf">geom_abline</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">slope</span><span class="o">=</span><span class="n">slope</span><span class="p">,</span><span class="n">intercept</span><span class="o">=</span><span class="n">intercept</span><span class="p">))</span> <span class="o">+</span>
+
+    <span class="n">theme_custom</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The downloaded binary packages are in
-	/var/folders/31/2cd8hp7n17b_f8vxg76mrpyr0000gn/T//RtmpIlU5G9/downloaded_packages
-</pre></div>
+<img alt="../_images/20200122_sensor_calib_9_0.png" src="../_images/20200122_sensor_calib_9_0.png" />
 </div>
 </div>
 </div>
@@ -521,7 +677,7 @@ See problems(...) for more details.
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="20210121_sensor_calibration.html" title="previous page">2021-01-21 Phosphate Sensor Calibration</a>
-    <a class='right-next' id="next-link" href="20210118/20210118_GAP_Assay.html" title="next page">2021-01-18 GAP Assay</a>
+    <a class='right-next' id="next-link" href="20210120/20210120_GAP_Assay.html" title="next page">2021-01-20 GAP Assay</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

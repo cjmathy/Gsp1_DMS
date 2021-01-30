@@ -56,7 +56,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Notes" href="../../notes/index.html" />
-    <link rel="prev" title="2021-01-20 GAP Assay" href="../20210119/20210120_GAP_Assay.html" />
+    <link rel="prev" title="2021-01-17 GAP Assay" href="../20210117/20210117_GAP_Assay.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -98,6 +98,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../journal/20210128_CD.html">
+     2021-01-28 CD
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../journal/20201107_N156W_cloning.html">
      20201107 N156W cloning
     </a>
@@ -108,11 +113,6 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../journal/2020-11-13%20HPLC%20and%20CD.html">
-     2020-11-13 HPLC and CD with F28V, F28Y
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../../journal/20201113_aggregation_test.html">
      2020-11-13 Aggregation Test
     </a>
@@ -120,6 +120,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../journal/20201029_Mutant_Expression.html">
      2020-10-29 Gsp1 Mutant Expression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../journal/20210130_CD.html">
+     2021-01-28 CD
     </a>
    </li>
    <li class="toctree-l2">
@@ -137,8 +142,13 @@
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../analysis/20200112_plot_CD_HPLC.html">
-     20200112_plot_CD_HPLC
+    <a class="reference internal" href="../../analysis/2020-11-13%20HPLC%20and%20CD.html">
+     2020-11-13 HPLC and CD with F28V, F28Y
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../analysis/20200112_plot_CD_HPLC-checkpoint.html">
+     20210112_plot_CD_HPLC
     </a>
    </li>
   </ul>
@@ -166,6 +176,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../20210120/20210120_GAP_Assay.html">
+     2021-01-20 GAP Assay
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../20210118/20210118_GAP_Assay.html">
      2021-01-18 GAP Assay
     </a>
@@ -173,11 +188,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../20210117/20210117_GAP_Assay.html">
      2021-01-17 GAP Assay
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../20210119/20210120_GAP_Assay.html">
-     2021-01-20 GAP Assay
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -237,6 +247,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../../notes/For%20David%20%20What%20we%20know%20about%20mutants.html">
      2020-06-09 Mutation info for David
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../notes/DELA_instructions.html">
+     DELA Instructions from David Lambright
     </a>
    </li>
    <li class="toctree-l2">
@@ -377,7 +392,12 @@
 <h1>2020-11-17 GAP Assay<a class="headerlink" href="#gap-assay" title="Permalink to this headline">¶</a></h1>
 <p>Running pilot GAP assay with F28V (20201110 prep), F28Y (20201110 prep), and WT (20181206 prep)</p>
 <ul>
-<li><p>NOTE: I used the wrong extinction coefficient for F28Y throughout this experiment, so the concentration in the assay should be adjusted to account for this. I was using 37675 as the extinction coefficient for all three mutants, when it should be 39165 for F28Y because of the tyrosine mutation (calculated on Expasy)</p></li>
+<li><p>NOTE: I used the wrong extinction coefficient for F28Y throughout this experiment, so the concentration in the assay should be adjusted to account for this. I was using 37675 as the extinction coefficient for all three mutants, when it should be 39165 for F28Y because of the tyrosine mutation (calculated on Expasy)</p>
+<ul class="simple">
+<li><p>to account for this, the concentrations used in the GAP assay should be updated from 5 to 5 * 39.165/37.675 = 5.1976 and from 10 to 10 * 39.165/37.675 = 10.395</p></li>
+<li><p>these changes were accounted for in the script <code class="docutils literal notranslate"><span class="pre">20201117_GAP_assay.R</span></code> which makes the file <code class="docutils literal notranslate"><span class="pre">index_table_temp.txt</span></code>, so the downstream fitting is correct</p></li>
+</ul>
+</li>
 <li><p>Spun down samples at max speed, 4C</p></li>
 <li><p>measured concentrations (used 1:50 dilution for WT)</p>
 <table class="colwidths-auto table">
@@ -561,7 +581,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="../20210119/20210120_GAP_Assay.html" title="previous page">2021-01-20 GAP Assay</a>
+    <a class='left-prev' id="prev-link" href="../20210117/20210117_GAP_Assay.html" title="previous page">2021-01-17 GAP Assay</a>
     <a class='right-next' id="next-link" href="../../notes/index.html" title="next page">Notes</a>
 
     </div>

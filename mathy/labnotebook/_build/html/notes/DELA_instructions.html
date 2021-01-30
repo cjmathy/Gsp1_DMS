@@ -1,0 +1,508 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DELA Instructions from David Lambright &#8212; GAP and GEF Expression Tuning</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="2020-03-27 EMAP Colony Size Notes" href="emap%20colony%20size%20notes.html" />
+    <link rel="prev" title="2020-06-09 Mutation info for David" href="For%20David%20%20What%20we%20know%20about%20mutants.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">GAP and GEF Expression Tuning</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../journal/index.html">
+   Experimental Journal
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../journal/20201204_Mutant_Expression.html">
+     2020-12-04 Gsp1 Mutant Expression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../journal/20210128_CD.html">
+     2021-01-28 CD
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../journal/20201107_N156W_cloning.html">
+     20201107 N156W cloning
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../journal/20201026_Mutant_Expression.html">
+     2020-10-26 Gsp1 Mutant Expression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../journal/20201113_aggregation_test.html">
+     2020-11-13 Aggregation Test
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../journal/20201029_Mutant_Expression.html">
+     2020-10-29 Gsp1 Mutant Expression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../journal/20210130_CD.html">
+     2021-01-28 CD
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../journal/20201205_prep.html">
+     20201205 through 20200110 - Gsp1 Mutant Expression
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../analysis/index.html">
+   Analysis
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../analysis/2020-11-13%20HPLC%20and%20CD.html">
+     2020-11-13 HPLC and CD with F28V, F28Y
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../analysis/20200112_plot_CD_HPLC-checkpoint.html">
+     20210112_plot_CD_HPLC
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../GAP_assays/index.html">
+   GAP Assays
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../GAP_assays/tina_notes.html">
+     Notes from Tina about GAP assays
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../GAP_assays/20210121_sensor_calibration.html">
+     2021-01-21 Phosphate Sensor Calibration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../GAP_assays/20200122_sensor_calib.html">
+     2020-01-22 Phosphate Sensor Calibration
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../GAP_assays/20210120/20210120_GAP_Assay.html">
+     2021-01-20 GAP Assay
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../GAP_assays/20210118/20210118_GAP_Assay.html">
+     2021-01-18 GAP Assay
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../GAP_assays/20210117/20210117_GAP_Assay.html">
+     2021-01-17 GAP Assay
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../GAP_assays/20201117/20201117_GAP_assay.html">
+     2020-11-17 GAP Assay
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="index.html">
+   Notes
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="isntalling%20bio3d.html">
+     2020-02-04 Installing bio3d
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Neuwald2003_notes.html">
+     Neuwald 2003 notes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="meeting_notes.html">
+     Meeting notes for DMS project
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Gsp1%20DMS%20Plan%202020-07-01.html">
+     2020-07-01 Gsp1 DMS Plan
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="gsp1_sequence.html">
+     Gsp1 sequence info
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="20201021_results_outline.html">
+     very rough results outline to consider
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Gsp1%20annotation.html">
+     2020-03-12 Gsp1 annotation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Gsp1%20DMS%20Plan%20progress.html">
+     2020-07-09 Gsp1 DMS Plan PROGRESS
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="For%20David%20%20What%20we%20know%20about%20mutants.html">
+     2020-06-09 Mutation info for David
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     DELA Instructions from David Lambright
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="emap%20colony%20size%20notes.html">
+     2020-03-27 EMAP Colony Size Notes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Tina%20explaining%20the%20Gsp1%20EMAP%20paper%20SASA.html">
+     2020-06-08 Tina on EMAP SASA
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="loose_ends.html">
+     Loose ends - some general things to think about for DMS
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../protocols/index.html">
+   Protocols
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../protocols/GAP_assay.html">
+     GAP Assay
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notes/DELA_instructions.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#specifics-from-tina">
+   Specifics from Tina
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#additional-notes-from-chris">
+   Additional notes from CHris
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="dela-instructions-from-david-lambright">
+<h1>DELA Instructions from David Lambright<a class="headerlink" href="#dela-instructions-from-david-lambright" title="Permalink to this headline">¶</a></h1>
+<p>After downloading, double-click “Dela App Scripts.zip” to unzip it. You should get a folder “Dela App Scripts” that contains the application and various other folders/files. You can move the application to your MACs Application folder if desired. It should run on any MAC with OSX 9 or later. Some (admittedly dated) documentation is available within the program under help in the main menu bar. There are also some help tags that can be viewed by hovering the mouse over buttons, etc.</p>
+<p>Probably the easiest way to get going would be to try to reproduce the Integrated Michaelis-Menten Analysis for the WT and mutant data you sent me. The steps would be something like:</p>
+<ol class="simple">
+<li><p>Open the application - should get a new “Untitled” document window. See Document window under the help contents for explanation. You can save the document at any point under the File menu in the toolbar.</p></li>
+<li><p>Import your data - this will likely require conversion into a format that DELA can recognize. Basically, DELA stores data as columns of X, Y, and Errors. It can import data from files or the clipboard as some combination X, Y and/or Errors. In addition to columns of numbers, DELA can import data and/or columns labels separated by a tab. It can also import row labels terminated by a tab. It doesn’t know what to do with multiple row labels or formats were one data set is appended after another. That said, it can import data organized as repeating columns in a spread sheet (e.g. X Y X Y etc, or X Y E, X Y E, etc or X Y1 Y2 Y3 etc).</p></li>
+</ol>
+<p>One way to import data would be to open the files in Excel, select/copy the X and Y columns for a given well and paste into DELA. Another way would be to drag/drop files with the X and Y columns for a given well.</p>
+<p>After importing the data, a new sheet containing the data will appear in the document contents. The sheet may contain one or more data sets.</p>
+<ol class="simple">
+<li><p>Plot the data - select the sheet(s) containing the data of interest and plot the data with New Plot under the Plot menu. Hopefully, it looks like your data. Objects in the plots including data points, axes, text, etc are clickable. You can also right click any where on the plot view to get a menu with various options.</p></li>
+<li><p>Select a model - choose Select under the Model menu and select Integrated Michaelis Menten from the available models in the Model popup menu.</p></li>
+<li><p>Setup the initial parameter values for the model - click the Parameters tab above the table and click the Estimate button. This will provide reasonable estimates for the Initial and Final Conversion Factors. You’ll need to enter the Initial [Substrate] and Toal [Enzyme] concentrations and make reasonable guesses for kcat and Km. Concentrations units can be anything (e.g. pM, nM, uM, mM, etc) but should be consistent (.e.g all uM or all nM, etc). You can also enter a value for the intrinsic rate (kintr) if known. Assuming your guesses are close enough, you should see model curves that look qualitatively like the data but differ quantitatively. If not, play around with the kcat and Km values. You can use the data popup menu to select the data set of interest if you have more than one data set in the plot. Also, if the Apply to all button is checked, any edits in the table will be applied to all data sets in the plot.</p></li>
+<li><p>Fit the data - choose Fit from the tab above the table and click on either the Marquardt or Simplex buttons. These are the two most common algorithms for fitting models to data. Usually, SImplex is more powerful but sometimes Marquardt works better. I usually alternate between them until the model curves and parameter values stop changing. Probably you will want to fit four parameters: the initial and final conversion factors, kcat, and Km. For the higher concentration data that slopes downward at longer times, you can improve that fit by including a small negative Baseline Slope. There’s a Fit column in the table with check boxes determine whether a given parameter is treated as adjustable or as a constant.</p></li>
+</ol>
+<p>Hopefully, thats enough to get started. If you run to problems or have questions, let me know.</p>
+<div class="section" id="specifics-from-tina">
+<h2>Specifics from Tina<a class="headerlink" href="#specifics-from-tina" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Import individual files containing three columns: condition, Time, fluorescence</p></li>
+<li><p>On import screen, select “has row labels”, and set the Data Type as “Fluor Kinetics”</p></li>
+<li><p>Tina organizes the datasets in a sheet by copying the mutant descriptor (WT or F28V, etc) before the condition, e.g. the dataset is named “Data4: WT 20201117-WT-A1-5-1-20” (you can’t get rid of the Data#). Then you can reorder them by mutant for easy browsing by dragging the datasets</p></li>
+<li><p>select a dataset, plot it, then go to model -&gt; IMM</p></li>
+<li><p>uncheck all the global fit checkboxes, all of Tina’s fits were done on individual curves</p></li>
+<li><p>Only check the following boxes for fitting:</p>
+<ul>
+<li><p>initial conversion</p></li>
+<li><p>final conversion</p></li>
+<li><p>baseline slope</p></li>
+<li><p>kcat</p></li>
+<li><p>Km</p></li>
+</ul>
+</li>
+<li><p>If you have bad data, you can try to constrain min and max values in the fit menu, like for the Km</p></li>
+<li><p>Initial vals:</p>
+<ul>
+<li><p>Put in initial values for kcat 5, Km 0.2</p></li>
+<li><p>Total enzyme 0.001</p></li>
+<li><p>Initial Substrate calculated from the script (file called “calculated_product_conc.txt”)</p></li>
+</ul>
+</li>
+<li><p>Running the fit</p>
+<ul>
+<li><p>Select Estimate, confirm the global fits are off</p></li>
+<li><p>then fit, Start with simplex, then marquardt. simplex won’t fit the baseline</p></li>
+<li><p>Can mask later data points to get better fits of the part that matters, but try not to mask much. You can look and see if that values don’t change too much</p></li>
+</ul>
+</li>
+<li><p>To export:</p>
+<ul>
+<li><p>Go to parameters</p></li>
+<li><p>Par -&gt; Data</p></li>
+<li><p>Then go to Sheet: Parameters for IMM -&gt; Parameters for IMM</p></li>
+<li><p>Manually copy into a text file</p></li>
+<li><p>Remove “Data#:” from each line</p></li>
+</ul>
+</li>
+<li><p>To compute errors and mean parameter values, use the “Postdela analysis” file</p>
+<ul>
+<li><p>the input to that is the parameters file made by hand from DELA export</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="additional-notes-from-chris">
+<h2>Additional notes from CHris<a class="headerlink" href="#additional-notes-from-chris" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>to disable dark mode, type <code class="docutils literal notranslate"><span class="pre">defaults</span> <span class="pre">write</span> <span class="pre">com.dgl.Dela</span> <span class="pre">NSRequiresAquaSystemAppearance</span> <span class="pre">-bool</span> <span class="pre">yes</span></code>, from https://apple.stackexchange.com/questions/338044/can-i-turn-to-dark-mode-only-for-specific-apps-in-macos-mojave</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notes"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="For%20David%20%20What%20we%20know%20about%20mutants.html" title="previous page">2020-06-09 Mutation info for David</a>
+    <a class='right-next' id="next-link" href="emap%20colony%20size%20notes.html" title="next page">2020-03-27 EMAP Colony Size Notes</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Chris Mathy<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
